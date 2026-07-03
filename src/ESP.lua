@@ -1471,9 +1471,29 @@ local UtilityFunctions = {
 		assert(self, "EXUNYS_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
 
 		
-		if Object.PrimaryPart then
-			Object = Object.PrimaryPart
-		end
+		if Object then
+        	if Object:IsA("Model") then
+            	-- Si c'est un modèle, essayer d'obtenir sa PrimaryPart
+            	if Object.PrimaryPart then
+                	Object = Object.PrimaryPart
+            	elseif Object:FindFirstChild("HumanoidRootPart") then
+                	Object = Object.HumanoidRootPart
+            	elseif Object:FindFirstChild("Head") then
+                	Object = Object.Head
+            	end
+        	elseif Object:IsA("Player") then
+            	-- Si c'est un joueur, ne pas essayer d'accéder à PrimaryPart directement
+            	-- On gardera l'objet joueur tel quel
+            	-- Rien à faire ici
+        	elseif Object:IsA("Part") or Object:IsA("MeshPart") then
+            -- Si c'est déjà une pièce, on la garde
+            -- Rien à faire ici
+        end
+    end
+
+    if not Object then
+        return
+    end
 
 		if not Object then
 			return
