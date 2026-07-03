@@ -1473,7 +1473,7 @@ local UtilityFunctions = {
 		
 		if pcall(gethiddenproperty, Object, "PrimaryPart") then
 			--print(" --DEBUG : "..Object.Name.." WHICH IS A "..typeof(Object).." IN /"..Object.Parent.Parent.Parent.Name.."/"..Object.Parent.Parent.Name.."/"..Object.Parent.Name.."/")
-			Object = Object.PrimaryPart
+			Object = Object.Character:WaitForChild("PrimaryPart")
 		end
 
 		if not Object then
