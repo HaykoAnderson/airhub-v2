@@ -1472,7 +1472,7 @@ local UtilityFunctions = {
 
 		
 		if pcall(gethiddenproperty, Object, "PrimaryPart") then
-			print(" --DEBUG : "..Object.Name.." WHICH IS A "..typeof(Object).." IN /"..Object.Parent.Parent.Parent.Name.."/"..Object.Parent.Parent.Name.."/"..Object.Parent.Name.."/")
+			--print(" --DEBUG : "..Object.Name.." WHICH IS A "..typeof(Object).." IN /"..Object.Parent.Parent.Parent.Name.."/"..Object.Parent.Parent.Name.."/"..Object.Parent.Name.."/")
 			Object = Object.PrimaryPart
 		end
 
