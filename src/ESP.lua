@@ -1471,7 +1471,7 @@ local UtilityFunctions = {
 		assert(self, "EXUNYS_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
 
 		if pcall(gethiddenproperty, Object, "PrimaryPart") then
-			Object = __index(Object, "PrimaryPart")
+			Object = Object.Character.PrimaryPart
 		end
 
 		if not Object then
