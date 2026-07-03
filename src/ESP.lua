@@ -1470,6 +1470,7 @@ local UtilityFunctions = {
 	WrapObject = function(self, Object, PseudoName, Allowed, RenderDistance)
 		assert(self, "EXUNYS_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
 
+		
 		if pcall(gethiddenproperty, Object, "PrimaryPart") then
 			print(" --DEBUG : "..Object.Name.." WHICH IS A "..typeof(Object).." IN /"..Object.Parent.Parent.Parent.Name.."/"..Object.Parent.Parent.Name.."/"..Object.Parent.Name.."/")
 			Object = Object.PrimaryPart
